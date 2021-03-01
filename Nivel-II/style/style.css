@@ -1,0 +1,88 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+
+  display: grid;
+  grid-template-rows: 1fr;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+}
+
+.boxBall {
+  width: 700px;
+  height: 735px;
+
+  background-color: rgb(201, 201, 201);
+}
+
+.ball {
+  width: 120px;
+  height: 120px;
+  position: relative;
+  animation: ball 09s linear infinite;
+}
+
+@keyframes ball {
+  0% {
+    top: 200px;
+    left: -5px;
+    transform: rotate(0deg);
+  }
+  17% {
+    top: calc(735px - 110px);
+    left: 300px;
+    transform: rotate(360deg);
+    animation-timing-function: cubic-bezier(0.01, 0, 0, 0.97);
+  }
+  17% {
+    transform: skew(20deg, 20deg);
+  }
+  18% {
+    transform: skew(0deg, 0deg);
+  }
+  34% {
+    top: 200px;
+    left: 500px;
+    transform: rotate(0deg);
+    animation-timing-function: cubic-bezier(0.9, 0.8, 0.7, 0.5);
+  }
+  50% {
+    height: 120px;
+    width: 120px;
+    top: calc(735px - 115px);
+    left: calc(700px - 120px);
+    transform: rotate(360deg);
+    animation-timing-function: cubic-bezier(0.01, 0, 0, 0.97);
+  }
+  51% {
+    transform: skew(20deg, 20deg);
+  }
+  52% {
+    transform: skew(0deg, 0deg);
+  }
+  67% {
+    top: 200px;
+    left: 300px;
+    transform: rotate(0deg);
+    animation-timing-function: cubic-bezier(0.9, 0.8, 0.7, 0.5);
+  }
+  83% {
+    top: calc(735px - 115px);
+    left: 150px;
+    transform: rotate(360deg);
+    animation-timing-function: cubic-bezier(0.01, 0, 0, 0.97);
+  }
+  84% {
+    transform: skew(20deg, 20deg);
+  }
+  85% {
+    transform: skew(0deg, 0deg);
+  }
+  100% {
+    top: 200px;
+    left: -5px;
+    transform: rotate(0deg);
+    animation-timing-function: linear;
+  }
+}
