@@ -1,0 +1,118 @@
+body {
+  height: 100vh;
+}
+
+:root {
+  --animation-time: 1s;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.2rem;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+[class^="col"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--font-size-text);
+}
+
+[class^="col-"] {
+  position: relative;
+  overflow: hidden;
+}
+
+.colText {
+  color: white;
+  font-size: 3vw;
+  font-family: lato;
+}
+
+span {
+  display: block;
+  font-size: 1em;
+  color: white;
+}
+
+.col-1 {
+  background-color: #244f75;
+  animation-name: col-1;
+  animation-duration: var(--animation-time);
+}
+
+.col-2 {
+  background-color: #60bfbf;
+  animation-name: col-2;
+  animation-duration: var(--animation-time);
+}
+
+.col-3 {
+  background-color: #8c4b7e;
+  animation-name: col-3;
+  animation-duration: var(--animation-time);
+}
+
+.col-4 {
+  background-color: #f8bb44;
+  animation-name: col-4;
+  animation-duration: var(--animation-time);
+}
+
+.col-5 {
+  background-color: #f24b4b;
+  animation-name: col-5;
+  animation-duration: var(--animation-time);
+}
+
+.contentCol::after {
+  content: "";
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 1;
+  opacity: 0.1;
+  transform-origin: center center;
+  transform: skewX(35deg) scaleX(1) translate(0, 0);
+  transition: transform 1s;
+  transition-timing-function: cubic-bezier(0, 0.08, 0.02, 0.97);
+}
+
+[class^="col"]:hover .contentCol::after {
+  transform: skew(0) scaleX(1) translate(0, 0);
+  transition: transform 20ms ease-in;
+}
+
+/** Animation when the page loads - Place all elements on the viewport */
+@keyframes col-1 {
+  from {
+    transform: translateX(-100%);
+  }
+}
+@keyframes col-2 {
+  from {
+    transform: translateY(100%);
+  }
+}
+@keyframes col-3 {
+  from {
+    transform: translateY(-100%);
+  }
+}
+@keyframes col-4 {
+  from {
+    transform: translateY(100%);
+  }
+}
+@keyframes col-5 {
+  from {
+    transform: translateX(100%);
+  }
+}
